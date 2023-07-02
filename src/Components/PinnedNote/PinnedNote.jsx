@@ -7,7 +7,7 @@ const PinnedNote = () => {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
     axios
-      .get('/api/note/pin')
+      .get(`${process.env.REACT_APP_SERVER}/api/note/pin`)
       .then((response) => {
         setNotes(response.data.allPinnedNotes);
         console.log(response.data);

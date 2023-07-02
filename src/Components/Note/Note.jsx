@@ -9,10 +9,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import Swal from 'sweetalert2';
 
 function Note(props) {
-  const url = process.env.REACT_APP_SERVER;
   async function handleClick() {
     await axios
-      .post('/api/note/delete', {
+      .post(`${process.env.REACT_APP_SERVER}/api/note/delete`, {
         _id: props.id,
       })
       .then((response) => {
@@ -27,7 +26,10 @@ function Note(props) {
     const pinStatus = Boolean(props.isPinned) === true ? false : true;
     // alert(pinStatus);
     axios
-      .post(`${url}/api/note/pin`, { _id: props.id, pinStatus: pinStatus })
+      .post(`${process.env.REACT_APP_SERVER}/api/note/pin`, {
+        _id: props.id,
+        pinStatus: pinStatus,
+      })
       .then((response) => {
         // alert('reload');
         window.location.reload(true);

@@ -28,7 +28,7 @@ function CreateArea(props) {
   async function submitNote(event) {
     event.preventDefault();
     await axios
-      .post('/api/note/', {
+      .post(`${process.env.REACT_APP_SERVER}/api/note/`, {
         title: note.title,
         content: note.content,
       })

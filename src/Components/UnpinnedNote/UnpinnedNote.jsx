@@ -14,7 +14,7 @@ const UnpinnedNote = () => {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
     axios
-      .get('/api/note/')
+      .get(`${process.env.REACT_APP_SERVER}/api/note/`)
       .then((response) => {
         setNotes(response.data.allNotes);
         console.log(response.data);
