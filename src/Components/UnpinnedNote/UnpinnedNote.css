@@ -1,0 +1,11 @@
+.unpinnedNotes{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px ;
+}
+
+.pagination{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
