@@ -6,8 +6,6 @@ import Pagination from '../Pagination/Pagination';
 import './UnpinnedNote.css';
 
 const UnpinnedNote = () => {
-  const [loading, setLoading] = useState(true);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(6);
 
