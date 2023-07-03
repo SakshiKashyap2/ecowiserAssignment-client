@@ -1,11 +1,31 @@
-.unpinnedNotes{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px ;
+.unpinnedNotes {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+.note-head {
+  color: #f5ba13;
+  text-shadow: 2px 2px #5c565093;
+}
+.pagination {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-.pagination{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.grid-item {
+  background: #ccccccb3;
+  box-shadow: 0px 0px 5px 0px #f5ba13;
+  text-align: center;
+  padding: 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -19,9 +19,22 @@
     white-space: pre-wrap;
     word-wrap: break-word;
 } */
-.pinBox{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.pinBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #f5ba13;
+}
+.note {
+  width: 28em;
+}
+.note h1 {
+  padding-top: 20px;
+  font-weight: 700;
+}
+
+.note p {
+  text-align: justify;
 }

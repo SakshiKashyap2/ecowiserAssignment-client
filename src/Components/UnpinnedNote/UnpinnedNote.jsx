@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Note from '../Note/Note';
-import Pagination from '../Pagination/Pagination';
+import Pagination from '../Pagnation/Pagination';
 import './UnpinnedNote.css';
 
 const UnpinnedNote = () => {
@@ -10,6 +10,7 @@ const UnpinnedNote = () => {
   const [recordsPerPage] = useState(6);
 
   const [notes, setNotes] = useState([]);
+  const [gridCounter, setGridCounter] = useState(0);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER}/api/note/`)
@@ -28,19 +29,30 @@ const UnpinnedNote = () => {
   const currentRecords = notes.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(notes.length / recordsPerPage);
 
+  const gridReturn = () => {
+    setGridCounter(gridCounter + 1);
+    if (gridCounter > 6) {
+      setGridCounter(1);
+    }
+    alert(`div${gridCounter}`);
+  };
+
   return (
     <div className="unpinnedNotes">
-      <h1>UnPinned Note</h1>
-      <div>
+      <h1 className="note-head">Un-pinned Note</h1>
+      <br />
+      <div className="grid-container">
         {currentRecords.map((noteItem, index) => {
           return (
-            <Note
-              key={index}
-              id={noteItem._id}
-              title={noteItem.noteTitle}
-              content={noteItem.noteBody}
-              isPinned={noteItem.isPinned}
-            />
+            <div className="grid-item">
+              <Note
+                key={index}
+                id={noteItem._id}
+                title={noteItem.noteTitle}
+                content={noteItem.noteBody}
+                isPinned={noteItem.isPinned}
+              />
+            </div>
           );
         })}
       </div>

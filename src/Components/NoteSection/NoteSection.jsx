@@ -14,6 +14,8 @@ const NoteSection = () => {
       className="noteSection"
     >
       <PinnedNote />
+      <br />
+      <br />
       <UnpinnedNote />
     </div>
   );

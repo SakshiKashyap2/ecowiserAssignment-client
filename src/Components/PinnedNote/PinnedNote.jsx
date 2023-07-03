@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Note from '../Note/Note';
-
+import '../UnpinnedNote/UnpinnedNote.css';
 const PinnedNote = () => {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
@@ -19,7 +19,7 @@ const PinnedNote = () => {
 
   return (
     <div>
-      <h1>Pinned Note</h1>
+      <h1 className="note-head">Pinned Note</h1>
       {notes.map((noteItem, index) => {
         return (
           <Note
