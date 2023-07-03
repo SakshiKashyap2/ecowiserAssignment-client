@@ -52,7 +52,13 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form className="create-note">
+      <form
+        className="create-note"
+        style={{
+          width: '60%',
+          backgroundColor: 'balck',
+        }}
+      >
         {isExpanded && (
           <input
             name="title"

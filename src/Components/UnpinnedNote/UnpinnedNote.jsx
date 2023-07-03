@@ -10,7 +10,7 @@ const UnpinnedNote = () => {
   const [recordsPerPage] = useState(6);
 
   const [notes, setNotes] = useState([]);
-  const [gridCounter, setGridCounter] = useState(0);
+
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER}/api/note/`)
@@ -28,14 +28,6 @@ const UnpinnedNote = () => {
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = notes.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(notes.length / recordsPerPage);
-
-  const gridReturn = () => {
-    setGridCounter(gridCounter + 1);
-    if (gridCounter > 6) {
-      setGridCounter(1);
-    }
-    alert(`div${gridCounter}`);
-  };
 
   return (
     <div className="unpinnedNotes">
